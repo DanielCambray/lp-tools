@@ -1,0 +1,162 @@
+---
+import {site} from '../data/data.json'
+import GoogleAnalytics from "../components/GoogleAnalytics.astro";
+---
+
+<!doctype html>
+<html lang="en" class="bg-white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="google-site-verification" content={site.googleSiteVerification} />
+    <meta name="description" content={site.siteDescription} />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{site.siteTitle}</title>
+
+    <!--OG tags -->
+    <meta property="og:title" content={site.siteTitle} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={site.siteURL} />
+
+    <meta property="og:description" content={site.siteDescription} />
+    <meta property="og:site_name" content={site.siteTitle} />
+
+    <!--Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:title" content={site.siteTitle} />
+    <meta name="twitter:description" content={site.siteDescription} />
+    <meta name="twitter:image" content={site.siteImageURL} />
+
+    <link
+      rel="preload"
+      href="/IndustryBold.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+
+    <style is:global>
+      main {
+        animation: fadein 2s;
+      }
+      @font-face {
+        font-family: IndustryBlack;
+        src: url("/IndustryBold.otf") format("opentype");
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "IndustryBlack", sans-serif !important;
+      }
+      .industry {
+        font-family: "IndustryBlack", sans-serif !important;
+      }
+    </style>
+  </head>
+  <body class="bg-amber-100">
+    <GoogleAnalytics id={String(site.googleAnalytics.id)} partytown={site.googleAnalytics.partytown}/>
+    <slot />
+    <style is:global>
+      :root {
+        --font-mono: Menlo, Monaco, Lucida Console, Liberation Mono,
+          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+        --accent: 124, 204, 250;
+        --accent-light: 0, 240, 155;
+        --accent-dark: 49, 49, 249;
+        --accent-gradient: linear-gradient(
+          45deg,
+          rgb(var(--accent-dark)),
+          rgb(var(--accent-light)) 30%,
+          white 60%
+        );
+      }
+      input {
+        border-radius: 0;
+      }
+
+      input[type="search"] {
+        -webkit-appearance: none;
+      }
+
+      .text-gradient {
+        background-image: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 400%;
+        background-position: 0%;
+        font-size: 2.75rem;
+      }
+      html {
+        font-family: system-ui, sans-serif;
+      }
+      header {
+        max-width: 100%;
+        height: auto;
+      }
+      body {
+        margin: 0;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .spinner {
+        display: block;
+        animation: fadeout 1s;
+      }
+      .card {
+        display: none;
+      }
+
+      #dotone {
+        animation: blink 1s infinite;
+      }
+      #dottwo {
+        animation: blink 1s infinite;
+        animation-delay: 0.25s;
+      }
+      #dotthree {
+        animation: blink 1s infinite;
+        animation-delay: 0.5s;
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframe fadeout {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+    </style>
+  </body>
+</html>

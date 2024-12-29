@@ -1,0 +1,13 @@
+{
+  "site": {
+    "siteURL": "https://lp-tools.ilande.fr",
+    "siteDescription": "Various tools in order to setup liquidity pools",
+    "siteTitle": "Liquidity Pools Tools",
+    "siteImageURL": "/android-chrome-512x-512.jpg",
+    "googleSiteVerification": "Ge79DopMFmhqVIxdCc_ZrfGtQFZ1JsS1n0BJ3ME7Gfk",
+    "googleAnalytics": {
+      "id": "G-0ZLLJ8FEE2",
+      "partytown": false
+    }
+  }
+}
