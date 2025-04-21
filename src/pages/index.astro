@@ -3,6 +3,7 @@ import 'vuetify/styles'
 import Layout from "../layouts/Layout.astro";
 import LpRangeCalculation from "../components/LpRangeCalculation.vue"
 import AnnualVolatilityCalculation from '../components/AnnualVolatilityCalculation.vue'
+import TradingPositionCalculation from '../components/TradingPositionCalculation.vue';
 ---
 
 <Layout>
@@ -21,6 +22,10 @@ import AnnualVolatilityCalculation from '../components/AnnualVolatilityCalculati
 
       <div class="mt-8">
         <AnnualVolatilityCalculation client:load/>
+      </div>
+
+      <div class="mt-8">
+        <TradingPositionCalculation client:load/>
       </div>
     </div>
   </div>
